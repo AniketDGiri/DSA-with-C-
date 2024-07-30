@@ -39,9 +39,7 @@ public:
     {
         int n = nums.size();
         reversalArray(nums, 0, k - 1);
-
         reversalArray(nums, k, n - 1);
-
         reversalArray(nums, 0, n - 1);
     }
 };
