@@ -61,51 +61,12 @@ public:
         }
         cout << endl;
     }
-
-    // using single traversal
-    void Approach3(vector<int> arr1, vector<int> arr2)
-    {
-        int n = arr1.size();
-        int m = arr2.size();
-
-        // temp vector
-        vector<int> temp;
-        int i = 0, j = 0;
-        while (i < n && j < m)
-        {
-            if (arr1[i] == arr2[j])
-            {
-                temp.push_back(arr1[i]);
-            }
-            else if (arr1[i] > arr2[j])
-            {
-                temp.push_back(arr2[j]);
-                j++;
-            }
-            else
-            {
-                temp.push_back(arr1[i]);
-                i++;
-            }
-        }
-
-        while (i < n)
-        {
-            temp.push_back(arr1[i]);
-            i++;
-        }
-        while (j < m)
-        {
-            temp.push_back(arr2[j]);
-            j++;
-        }
-    }
 };
 
 int main()
 {
-    vector<int> arr1 = {1, 2, 3, 3, 4, 5};
-    vector<int> arr2 = {2, 3, 4, 7, 8, 6};
+    vector<int> arr1 = {-7, 8};
+    vector<int> arr2 = {-8, -3, 8};
     Solution obj;
     obj.Approach1(arr1, arr2);
     obj.Approach2(arr1, arr2);
