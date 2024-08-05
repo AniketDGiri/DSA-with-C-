@@ -28,7 +28,6 @@ public:
             else if (nums[mid] == 2)
             {
                 swap(nums[mid], nums[high]);
-                mid++;
                 high--;
             }
             else
