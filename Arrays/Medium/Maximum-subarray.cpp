@@ -35,6 +35,41 @@ public:
         }
         return maxSum;
     }
+    int PrintMaximumSubarraySum(vector<int> &nums)
+    {
+        int left = 0, right = 0;
+        int maxSum = nums[0];
+        int tempSum = nums[0];
+        int n = nums.size();
+        int i = 0, j = 0;
+        for (int k = 1; k < n; k++)
+        {
+            if (tempSum + nums[k] > nums[k])
+            {
+                tempSum = tempSum + nums[k];
+                j++;
+            }
+            else
+            {
+                tempSum = nums[k];
+                i = j = k;
+            }
+
+            if (tempSum > maxSum)
+            {
+                left = i;
+                right = j;
+                maxSum = tempSum;
+            }
+        }
+
+        for (int i = left; i <= right; i++)
+        {
+            cout << nums[i] << " ";
+        }
+        cout << endl;
+        return maxSum;
+    }
 };
 
 int main()
@@ -43,5 +78,6 @@ int main()
     Solution obj;
     cout << obj.Approach1(arr) << endl;
     cout << obj.Approach2(arr) << endl;
+    cout << obj.PrintMaximumSubarraySum(arr) << endl;
     return 0;
 }
