@@ -34,5 +34,7 @@ Constraints:
     n == nums.length
     2 <= n <= 104
     0 <= nums[i] <= 106
-    1 <= k <= n * (n - 1) / 2
+    1 <= k <= n * (n - 1) / 2x
+
+
 */
