@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <math.h>
+#include <__clang_cuda_cmath.h>
 
 using namespace std;
 
