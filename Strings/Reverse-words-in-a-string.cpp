@@ -21,19 +21,34 @@ public:
     {
         string temp = "";
         int len = s.length();
+        // cout << len << endl;
         string finalAns = "";
+        int i = 0;
 
-        for (int i = 0; i < len; i++)
+        while (i < len)
         {
+            temp = "";
 
-            if (s[i] == ' ' || s[i] == '\0')
+            while (i < len and s[i] == ' ')
             {
-                finalAns += reverseString(temp) + " ";
-                temp = "";
+                i++;
             }
-            else
+            cout << "Temp is: " << temp << endl;
+            while (i < len and s[i] != ' ')
             {
                 temp += s[i];
+                i++;
+            }
+            if (temp.length() > 0)
+            {
+                if (finalAns.length() == 0)
+                {
+                    finalAns = temp;
+                }
+                else
+                {
+                    finalAns = temp + " " + finalAns;
+                }
             }
         }
         return finalAns;
@@ -43,6 +58,6 @@ public:
 int main()
 {
     Solution obj;
-    cout << obj.OptimalApproach("the sky is blue") << endl;
+    cout << obj.OptimalApproach(" hello world ") << endl;
     return 0;
 }
