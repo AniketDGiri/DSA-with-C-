@@ -9,9 +9,7 @@ class Solution
 public:
     int OptimalApproach(string s)
     {
-        stack<char> stack;
         int maxDepth = 0;
-        int tempDepth = 0;
         int openParenthesisCnt = 0;
         int len = s.length();
         for (int i = 0; i < len; i++)
@@ -20,7 +18,7 @@ public:
             {
                 openParenthesisCnt += 1;
             }
-            else
+            else if (s[i] == ')')
             {
                 openParenthesisCnt--;
             }
@@ -33,7 +31,7 @@ public:
 int main()
 {
 
-    string str = "(1)+((2))+(((3)))";
+    string str = "(1+(2*3)+1)";
     Solution obj;
     cout << obj.OptimalApproach(str) << endl;
     return 0;
