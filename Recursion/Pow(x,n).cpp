@@ -15,7 +15,7 @@ public:
             checkNegative = true;
         }
         double ans = 1.0;
-        int i = n;
+        long long i = n;
         while (n)
         {
             if (n % 2)
