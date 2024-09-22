@@ -87,7 +87,6 @@ public:
         long long even = (n + 1) / 2;
         long long odd = (n / 2);
         long long M = 1e9 + 7;
-        cout << "---" << calculateBinaryExpo(5, even) << endl;
         return (calculateBinaryExpo(5, even) * calculateBinaryExpo(4, odd)) % M;
     }
     long long power(long long x, long long n)
