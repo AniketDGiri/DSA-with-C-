@@ -14,6 +14,7 @@ public:
         if (start == end)
         {
             arr.push_back(temp);
+
             return;
         }
         temp.push_back(nums[start]);
