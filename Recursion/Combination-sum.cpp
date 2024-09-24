@@ -41,7 +41,7 @@ public:
 
 int main()
 {
-    vector<int> arr = {2, 3, 5};
+    vector<int> arr = {10, 1, 2, 7, 6, 1, 5};
     Solution obj;
     vector<vector<int>> temp;
     temp = obj.combinationSum(arr, 8);
