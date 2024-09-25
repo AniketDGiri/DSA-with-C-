@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <algorithm>
 
 using namespace std;
 
@@ -34,6 +35,7 @@ public:
 
     vector<vector<int>> combinationSum2(vector<int> &candidates, int target)
     {
+        sort(candidates.begin(), candidates.end());
         int start = 0, end = candidates.size();
         vector<int> temp;
         FindCombinationSum(start, end, candidates, target, temp);
