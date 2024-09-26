@@ -25,7 +25,6 @@ public:
             return false;
         }
 
-        cout << "Board traversed is" << board[i][j] << endl;
         visistedChar[i][j] = true;
         // for up direction
 
