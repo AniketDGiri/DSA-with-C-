@@ -79,11 +79,48 @@ public:
         // return checkEqualPartition(nums, sum / 2, 0);
         return checkEqualPartitionBottomUpApproach(nums, sum / 2, 0);
     }
+
+    bool canPartitionTopDown(vector<int> &nums)
+    {
+
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            sum += nums[i];
+        }
+        if (sum % 2)
+        {
+            return false;
+        }
+        sum = sum / 2;
+        vector<vector<bool>> memo1(nums.size() + 1, vector<bool>(sum + 1, false));
+
+        for (int i = 0; i <= nums.size(); i++)
+        {
+            memo1[i][0] = true;
+        }
+
+        for (int i = 1; i <= nums.size(); i++)
+        {
+            for (int j = 1; j <= sum; j++)
+            {
+                if (nums[i - 1] <= j)
+                {
+                    memo1[i][j] = memo1[i - 1][j - nums[i - 1]] || memo1[i - 1][j];
+                }
+                else
+                {
+                    memo1[i][j] = memo1[i - 1][j];
+                }
+            }
+        }
+        return memo1[nums.size()][sum];
+    }
 };
 
 int main()
 {
-    vector<int> arr = {1, 2, 3, 5};
+    vector<int> arr = {1, 5, 11, 5};
     Solution obj;
     cout << obj.canPartitionApproach1(arr) << endl;
     return 0;
